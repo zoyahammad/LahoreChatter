@@ -3,35 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LahoreChatter</title>
+    <title>Lahore Chatter</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #40916c;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 20px;
+        }
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: 0 auto;
         }
         .chat-container {
-            width: 500px;
-            margin: 0 auto;
-            margin-top: 50px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 20px;
         }
         .chat-box {
-            border: 1px solid #ccc;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
             padding: 10px;
             height: 400px;
             overflow-y: scroll;
+            margin-bottom: 10px;
         }
         .user-input {
-            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+        }
+        .user-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+        }
+        .user-input button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .user-input button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+            color: #868e96;
+        }
+        .intro {
+            text-align: center;
+        }
+        .intro img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
-    <div class="chat-container">
-        <div class="chat-box" id="chat-box"></div>
-        <div class="user-input">
-            <input type="text" id="user-message" placeholder="Type your message here..." />
-            <button onclick="sendMessage()">Send</button>
+    <header>
+        <h1>Lahore Chatter</h1>
+        <p>Your friendly guide to exploring Lahore</p>
+    </header>
+    <div class="container">
+        <div class="intro">
+            <img src="https://media.istockphoto.com/id/619503842/photo/wazir-khan-mosque-lahore-pakistan.jpg?s=612x612&w=0&k=20&c=3vrR52_8PkripvQhwP_TOVCW4e9xvv4lIjlSRyPd9Hs=" alt="Beautiful view of Lahore">
+            <p>Discover the rich history, vibrant culture, and stunning architecture of Lahore with Lahore Chatter!</p>
+        </div>
+        <div class="chat-container">
+            <div class="chat-box" id="chat-box"></div>
+            <div class="user-input">
+                <input type="text" id="user-message" placeholder="Type your message here..." />
+                <button onclick="sendMessage()">Send</button>
+            </div>
         </div>
     </div>
+    <footer>
+        <p>&copy; 2024 Lahore Chatter. All rights reserved.</p>
+    </footer>
 
     <script>
         function sendMessage() {
@@ -50,7 +115,7 @@
             })
             .then(response => response.json())
             .then(data => {
-                chatBox.innerHTML += "<p><strong>LahoreChatter:</strong> " + data.response + "</p>";
+                chatBox.innerHTML += "<p><strong>Lahore Chatter:</strong> " + data.response + "</p>";
                 chatBox.scrollTop = chatBox.scrollHeight;
             });
 
