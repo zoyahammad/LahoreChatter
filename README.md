@@ -93,3 +93,7 @@ Feel free to make a pull request with proposed changes :)
 ## Youtube Demo:
 
 [LahoreChatter Demo](https://www.youtube.com/watch?v=Zh3Ws9C13eI)
+
+### SEO:
+
+LahoreChatter - Zoya Hammad ICSA / Lahore Chatter chatbot Zoya Hammad ICSA
